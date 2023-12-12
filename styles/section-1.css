@@ -1,0 +1,326 @@
+html {
+    overflow: hidden;
+}
+:root {
+    --Gray: #D9D9D9;
+    --dark-noir: #1A1A1A;
+    --Blue: #B1C7DF;
+    --White: #FFF;
+}
+
+.content-section {
+    display: flex;
+}
+
+.container {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.card-container {
+    position: relative; /* Set a positioning context for its children */
+    width: 322px; /* Match the card's width */
+    height: auto; /* Adjusts height based on content */
+    padding: 16px; /* Match card's padding so that SVG aligns */
+}
+
+.card-container:hover .card-hover-outline {
+    display: block;
+}
+
+/* Card Styles */
+.summary-card {
+    display: flex;
+    width: 273px;
+    height: 100px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 16px;
+    background: var(--gradient-noir, linear-gradient(134deg, #4E4E4E -16.04%, #333 9.33%, #1A1A1A 32.02%, #1A1A1A 62.06%, #262626 87.42%, #4E4E4E 112.12%));
+    box-shadow: 2px 6px 15px 2px rgba(12, 10, 11, 0.80);
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Title Section Styles */
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-container {
+    padding: 7px;
+    border-radius: 8px;
+    background: var(--secondary-coral, #FF7E78);
+}
+
+.icon {
+    /* Adjust this as needed based on your icon's size */
+    width: 24px;
+    height: 24px;
+}
+
+.text {
+    color: var(--secondary-coral, #FF7E78);
+    font-family: Barlow;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+}
+
+.arrow-icon {
+    /* Adjust this as needed based on your SVG's size */
+    width: 16px;
+    height: 16px;
+}
+
+/* Dollar Amount Styles */
+.amount {
+    color: var(--White, #FFF);
+    font-family: Barlow;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+/* Subtitle Styles */
+.subtitle {
+    color: var(--secondary-purple, #9290FE);
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%; /* 18.2px */
+}
+
+/* Initial styles for the hover effect SVG */
+.card-hover-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 318px;
+    height: 151px;
+    z-index: 3; /* Updated z-index value to be below the card but above the container's base layer */
+    display: none;
+}
+
+/* Display the SVG when hovering over the card */
+.summary-card:hover {
+    z-index: 3; /* bring card to topmost layer on hover */
+}
+.summary-card:hover + .card-hover-outline {
+    display: block;
+}
+
+/* Additional SVG styles as provided */
+.card-hover-outline svg {
+    flex-shrink: 0;
+    stroke-width: 4px;
+    stroke: #6BDBE2;
+    mix-blend-mode: hard-light;
+    filter: drop-shadow(0px 4px 15px rgba(6, 240, 255, 0.80));
+}
+
+/* Custom Table Styles */
+.custom-table {
+    width: 100%; /* Adjust this as needed */
+    border-radius: 16px;
+    background: var(--gradient-noir, linear-gradient(134deg, #4E4E4E -16.04%, #333 9.33%, #1A1A1A 32.02%, #1A1A1A 62.06%, #262626 87.42%, #4E4E4E 112.12%));
+    box-shadow: 2px 6px 15px 2px rgba(12, 10, 11, 0.80);
+    padding: 0; /* Adjust as needed */
+    margin: 12px; /* Adjust as needed */
+    /* Add more custom styles here */
+  }
+  
+  /* Table Header Styles */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px; /* Adjust as needed */
+    color: var(--White, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-bottom: grey solid 1px;
+  }
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin-right: 5px; /* Adjust as needed */
+  }
+  
+  .title h6 {
+    width: 301px;
+    height: 27px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.15px;
+    margin: 0; /* Adjust as needed */
+    /* Add more custom styles here */
+  }
+  
+  .title p {
+    width: 301px;
+    height: 27px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.07px;
+    margin: 0; /* Adjust as needed */
+    color: var(--Gray, #D9D9D9);
+    /* Add more custom styles here */
+  }
+  
+  .right-icons {
+    display: flex;
+  }
+  
+  .right-icons svg {
+    margin-left: 5px; /* Adjust as needed */
+  }
+  
+  
+  /* Common styles for text elements */
+.text {
+    color: var(--White, #FFF);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+  }
+  
+  /* Container styles */
+  .table-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+    margin-top: 0px;
+  }
+  
+  /* Table header styles */
+  .container-table-header {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0px -1px 0px 0px #393C49 inset;
+    padding: 10px;
+  }
+  
+  .table-header-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: color 0.3s, text-decoration 0.3s;
+    color: var(--White);
+    /* Big body - 16 sp */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.16px;
+  
+    &:hover {
+      color: var(--Blue); /* Change to your desired hover color */
+    }
+  }
+  
+  /* Table Options Styles */
+  .table-options {
+    display: flex;
+    flex-direction: row;
+    margin-left: 14%;
+    gap: 12px;
+    padding: 10px;
+  }
+  .table-option-item {
+
+    flex-shrink: 0;
+    padding: 10px;
+    color: var(--White);
+    /* Subtitle - 14 sp */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.1px;
+    transition: color 0.4s, text-decoration 0.4s;
+    cursor: pointer; /* For clickable effect */
+    position: relative;
+  }
+
+  .table-option-item:hover {
+    color: var(--Blue);
+  }
+
+  .table-option-item:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    color: var(--Blue);
+    background: var(--Blue);
+  }
+
+  /* Table content styles */
+  .table-content {
+    display: flex;
+    flex-direction: column;
+  }
+/* Grid Container Styles */
+.grid-container {
+    display: flex;
+    gap: 0px; /* Adjust as needed */
+    margin-left: 16px;
+    margin-top: 16px; /* Add spacing between header and grid */
+  }
+  
+  /* Grid Column Styles */
+  .grid-column {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 16px); /* 25% width for each column with gap */
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0px -1px 0px 0px #393C49 inset;
+  }
+
+  .grid-item {
+    padding: 10px;
+    box-shadow: 0px -1px 0px 0px #393C49 inset;
+  }
+  
+  .grid-header {
+    font-weight: bold; /* Header text style */
+    margin-bottom: 8px; /* Spacing between header and rows */
+  }
+  
+  .grid-row {
+    /* Body - 14 sp */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.07px;
+    color: var(--White);
+  }
+  
